@@ -13,6 +13,8 @@
 		5C51873A2C42D16A00D00D34 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5C5187392C42D16A00D00D34 /* Base */; };
 		5C51873C2C42D16B00D00D34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C51873B2C42D16B00D00D34 /* Assets.xcassets */; };
 		5C51873F2C42D16B00D00D34 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5C51873E2C42D16B00D00D34 /* Base */; };
+		5C5187482C42D27F00D00D34 /* Web3Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 5C5187472C42D27F00D00D34 /* Web3Auth */; };
+		5C51874B2C42F68000D00D34 /* Web3Auth.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C51874A2C42F68000D00D34 /* Web3Auth.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		5C51873B2C42D16B00D00D34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C51873E2C42D16B00D00D34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C5187402C42D16B00D00D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C51874A2C42F68000D00D34 /* Web3Auth.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Web3Auth.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5187482C42D27F00D00D34 /* Web3Auth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 		5C5187312C42D16A00D00D34 /* WayBackMachine */ = {
 			isa = PBXGroup;
 			children = (
+				5C5187492C42F65F00D00D34 /* Resources */,
 				5C5187322C42D16A00D00D34 /* AppDelegate.swift */,
 				5C5187342C42D16A00D00D34 /* SceneDelegate.swift */,
 				5C5187362C42D16A00D00D34 /* ViewController.swift */,
@@ -65,6 +70,14 @@
 				5C5187402C42D16B00D00D34 /* Info.plist */,
 			);
 			path = WayBackMachine;
+			sourceTree = "<group>";
+		};
+		5C5187492C42F65F00D00D34 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C51874A2C42F68000D00D34 /* Web3Auth.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +96,9 @@
 			dependencies = (
 			);
 			name = WayBackMachine;
+			packageProductDependencies = (
+				5C5187472C42D27F00D00D34 /* Web3Auth */,
+			);
 			productName = WayBackMachine;
 			productReference = 5C51872F2C42D16A00D00D34 /* WayBackMachine.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 5C5187262C42D16A00D00D34;
+			packageReferences = (
+				5C5187462C42D27F00D00D34 /* XCRemoteSwiftPackageReference "web3auth-swift-sdk" */,
+			);
 			productRefGroup = 5C5187302C42D16A00D00D34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,6 +147,7 @@
 				5C51873C2C42D16B00D00D34 /* Assets.xcassets in Resources */,
 				5C51873F2C42D16B00D00D34 /* Base in Resources */,
 				5C51873A2C42D16A00D00D34 /* Base in Resources */,
+				5C51874B2C42F68000D00D34 /* Web3Auth.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +391,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C5187462C42D27F00D00D34 /* XCRemoteSwiftPackageReference "web3auth-swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/web3auth/web3auth-swift-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C5187472C42D27F00D00D34 /* Web3Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C5187462C42D27F00D00D34 /* XCRemoteSwiftPackageReference "web3auth-swift-sdk" */;
+			productName = Web3Auth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5C5187272C42D16A00D00D34 /* Project object */;
 }
