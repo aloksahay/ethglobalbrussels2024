@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             guard let _ = (scene as? UIWindowScene) else { return }
             
-            if let rootViewController = window?.rootViewController as? ViewController {
-                rootViewController.loadNFT()
+            if let navController = window?.rootViewController as? UINavigationController, let rootViewController = navController.topViewController as? ProductViewController{
+                rootViewController.scanComplete()
             }
         }
     }

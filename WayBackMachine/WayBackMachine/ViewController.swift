@@ -3,7 +3,7 @@
 //  WayBackMachine
 //
 //  Created by Alok Sahay on 13.07.2024.
-//
+// bound.underway.reaction
 
 import UIKit
 import Web3Auth
@@ -20,18 +20,17 @@ class ViewController: UIViewController {
         if isConsumerView {
             buttonSignin.setTitle("Consumer View", for: .normal)
         } else {
-
+            buttonSignin.setTitle("Sign In", for: .normal)
         }
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         
         if isConsumerView {
-            
+            self.gotoProductView()
         } else {
             loginUser()
         }
-        
     }
     
     func loginUser() {

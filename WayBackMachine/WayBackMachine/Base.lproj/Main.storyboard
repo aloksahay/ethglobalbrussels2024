@@ -68,21 +68,65 @@
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Product View Controller-->
         <scene sceneID="m9W-ax-rrV">
             <objects>
-                <viewController id="yDb-7U-ReJ" sceneMemberID="viewController">
+                <viewController id="yDb-7U-ReJ" customClass="ProductViewController" customModule="WayBackMachine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q3O-xu-ZVG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loI-J5-GFJ">
+                                <rect key="frame" x="144" y="743" width="105.33333333333331" height="55"/>
+                                <color key="backgroundColor" red="0.46666666870000001" green="0.63137257099999999" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Slb-0T-6hm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Check in">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="checkinComplete:" destination="yDb-7U-ReJ" eventType="touchUpInside" id="mDh-qA-ojF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BP-1l-rP0">
+                                <rect key="frame" x="0.0" y="251" width="393" height="452"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a47-a7-CaA">
+                                <rect key="frame" x="125.66666666666669" y="79" width="142" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="a47-a7-CaA" secondAttribute="height" multiplier="1:1" id="HDS-Aa-BHJ"/>
+                                    <constraint firstAttribute="width" constant="142" id="LmT-NJ-MIX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="byN-XY-WBS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="byN-XY-WBS" firstAttribute="bottom" secondItem="loI-J5-GFJ" secondAttribute="bottom" constant="20" id="4KW-Ss-ieZ"/>
+                            <constraint firstItem="4BP-1l-rP0" firstAttribute="top" secondItem="a47-a7-CaA" secondAttribute="bottom" constant="30" id="Mm8-OW-Y3K"/>
+                            <constraint firstItem="loI-J5-GFJ" firstAttribute="centerX" secondItem="byN-XY-WBS" secondAttribute="centerX" id="QpH-A6-v2c"/>
+                            <constraint firstItem="a47-a7-CaA" firstAttribute="top" secondItem="byN-XY-WBS" secondAttribute="top" constant="20" id="RtV-z6-rQB"/>
+                            <constraint firstItem="a47-a7-CaA" firstAttribute="centerX" secondItem="byN-XY-WBS" secondAttribute="centerX" id="gaG-Sq-4oS"/>
+                            <constraint firstItem="4BP-1l-rP0" firstAttribute="trailing" secondItem="byN-XY-WBS" secondAttribute="trailing" id="ntY-B0-Jy6"/>
+                            <constraint firstItem="loI-J5-GFJ" firstAttribute="top" secondItem="4BP-1l-rP0" secondAttribute="bottom" constant="40" id="uup-U8-1KI"/>
+                            <constraint firstItem="4BP-1l-rP0" firstAttribute="leading" secondItem="byN-XY-WBS" secondAttribute="leading" id="veG-we-9oq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="63J-G7-JvU"/>
+                    <connections>
+                        <outlet property="itemImage" destination="a47-a7-CaA" id="ef3-Bp-c5L"/>
+                        <outlet property="locationsLabel" destination="4BP-1l-rP0" id="VHB-jD-z2e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xna-KN-Xyr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1960" y="4"/>
+            <point key="canvasLocation" x="1959.5419847328244" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7NC-ly-oiu">
