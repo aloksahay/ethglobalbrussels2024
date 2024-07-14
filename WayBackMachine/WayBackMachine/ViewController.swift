@@ -10,16 +10,29 @@ import Web3Auth
 
 class ViewController: UIViewController {
     
+    let isConsumerView = false
     var user: Web3AuthState?
-    
+    @IBOutlet weak var buttonSignin: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        loginUser()
+                        
+        if isConsumerView {
+            buttonSignin.setTitle("Consumer View", for: .normal)
+        } else {
+
+        }
     }
     
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        
+        if isConsumerView {
+            
+        } else {
+            loginUser()
+        }
+        
+    }
     
     func loginUser() {
         login(provider: .GOOGLE)
@@ -36,8 +49,9 @@ class ViewController: UIViewController {
                 if result.error == nil {
                     print("""
                        Signed in successfully!
-                           Private key: \(String(describing: result.privKey))
-                           User info:
+                            Private key: \(String(describing: result.privKey))
+                            Public key: \(String(describing: result.tssPubKey))
+                            User info:
                                 Name: \(String(describing: result.userInfo?.name))
                                 Email: \(String(describing: result.userInfo?.email))
                                 Profile image: \(result.userInfo?.profileImage ?? "N/A")
@@ -46,14 +60,9 @@ class ViewController: UIViewController {
                     
                     self.user = result
                     
-                    
-                    
                 } else {
                     print("Error: \(result.error ?? "404")")
                 }
-                
-                
-                
                 
             } catch {
                 print("Error")
@@ -73,19 +82,31 @@ class ViewController: UIViewController {
         }
     }
     
-    func userLoggedIn() {
+    func logout() throws {
+        Task {
+            try await Web3Auth().logout()
+            await MainActor.run(body: {
+            })
+        }
+    }
+    
+    func gotoProductView() {
         
         
         
     }
     
-    func logout() throws {
-        Task {
-            try await Web3Auth().logout()
-            await MainActor.run(body: {
-                loggedIn = false
-            })
+    
+    
+    func loadNFT() {
+        
+        if isConsumerView {
+            
+        } else {
+            loginUser()
         }
+        
     }
+    
 }
 
