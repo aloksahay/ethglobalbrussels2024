@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                        """)
                     
                     self.user = result
-                    
+                    self.gotoProductView()
                 } else {
                     print("Error: \(result.error ?? "404")")
                 }
@@ -91,12 +91,8 @@ class ViewController: UIViewController {
     }
     
     func gotoProductView() {
-        
-        
-        
+        performSegue(withIdentifier: "showProducts", sender: nil)
     }
-    
-    
     
     func loadNFT() {
         
